@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propuesta de Entrega Oficial — Viaja y Explora Margarita · BlackTech Solutions</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #0066CC;
+      --turquesa: #00C4CD;
+      --naranja: #E8673A;
+      --navy: #003580;
+      --dorado: #F5A623;
+      --texto: #1A2B4A;
+      --gris-claro: #F8FAFC;
+      --borde: #E2E8F0;
+      --verde: #22c55e;
+      --amarillo: #F59E0B;
+      --rojo: #EF4444;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--texto);
+      background: #F1F5F9;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .document {
+      max-width: 960px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+    }
+
+    /* ─── PORTADA ──────────────────────────────────────────────── */
+    .cover {
+      background: linear-gradient(135deg, #003580 0%, #0055AA 45%, #0066CC 100%);
+      padding: 70px 60px 60px;
+      position: relative;
+      overflow: hidden;
+      min-height: 460px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cover-waves {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      pointer-events: none;
+      opacity: 0.18;
+    }
+
+    .cover-accent {
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,196,205,0.28) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover-accent2 {
+      position: absolute;
+      bottom: 20px; left: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,166,35,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover-accent3 {
+      position: absolute;
+      top: 50%; left: 40%;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,103,58,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cover-agency-badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .cover-body {
+      position: relative;
+      z-index: 2;
+      margin-top: 40px;
+    }
+
+    .cover-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--turquesa);
+      margin-bottom: 14px;
+    }
+
+    .cover-title {
+      font-family: 'Nunito', 'Arial Rounded MT Bold', system-ui;
+      font-size: 40px;
+      font-weight: 900;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .cover-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 32px;
+      max-width: 620px;
+      line-height: 1.6;
+    }
+
+    .cover-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .cover-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    .cover-badge.turquesa {
+      background: rgba(0,196,205,0.28);
+      border-color: rgba(0,196,205,0.6);
+      color: #A7F3F5;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .cover-badge.orange {
+      background: rgba(232,103,58,0.3);
+      border-color: rgba(232,103,58,0.6);
+      color: #FFD0BC;
+    }
+
+    .cover-progress-wrap {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 18px 22px;
+      max-width: 480px;
+    }
+
+    .cover-progress-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .cover-progress-label span:first-child {
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .cover-progress-label span:last-child {
+      color: var(--turquesa);
+      font-size: 18px;
+      font-weight: 800;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .progress-track {
+      background: rgba(255,255,255,0.2);
+      border-radius: 99px;
+      height: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--turquesa), #00E5F0);
+      border-radius: 99px;
+      width: 100%;
+    }
+
+    /* ─── SECTION HEADERS ──────────────────────────────────────── */
+    .section-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      padding: 36px 60px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .section-header.orange {
+      background: linear-gradient(135deg, #6B2209 0%, var(--naranja) 100%);
+    }
+
+    .section-header-left {}
+
+    .section-version-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+    .section-header h2 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      max-width: 520px;
+      line-height: 1.55;
+    }
+
+    .section-status-tag {
+      background: rgba(34,197,94,0.2);
+      border: 1px solid rgba(34,197,94,0.5);
+      color: #86EFAC;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ─── CONTENT SECTIONS ─────────────────────────────────────── */
+    .content-section {
+      padding: 40px 60px;
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .content-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .section-desc {
+      color: #4A5568;
+      font-size: 13.5px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      max-width: 780px;
+    }
+
+    /* ─── STAT CARDS ───────────────────────────────────────────── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .stats-row.highlight-row {
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 12px;
+      padding: 26px 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .stat-card.turquesa {
+      background: linear-gradient(135deg, #005C60, var(--turquesa));
+    }
+
+    .stat-card.naranja {
+      background: linear-gradient(135deg, #6B2209, var(--naranja));
+    }
+
+    .stat-card.big {
+      padding: 32px 20px;
+    }
+
+    .stat-number {
+      font-family: 'Nunito', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-card.big .stat-number {
+      font-size: 48px;
+    }
+
+    .stat-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      opacity: 0.85;
+      letter-spacing: 0.3px;
+      line-height: 1.35;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-sublabel {
+      font-size: 10.5px;
+      opacity: 0.65;
+      margin-top: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── URL CARD ─────────────────────────────────────────────── */
+    .url-card {
+      background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+      border: 1.5px solid #BFDBFE;
+      border-radius: 10px;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .url-card-icon {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      background: #DBEAFE;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .url-card-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 3px;
+    }
+
+    .url-card-value {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      font-family: 'Inter', monospace;
+    }
+
+    /* ─── MODULE CARDS ─────────────────────────────────────────── */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .module-card {
+      border: 1.5px solid var(--borde);
+      border-radius: 12px;
+      padding: 22px 20px;
+      background: white;
+      break-inside: avoid;
+    }
+
+    .module-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .module-card-icon-wrap {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .module-card-icon-wrap.blue   { background: #EFF6FF; }
+    .module-card-icon-wrap.teal   { background: #F0FDFB; }
+    .module-card-icon-wrap.orange { background: #FFF7F3; }
+    .module-card-icon-wrap.green  { background: #F0FDF4; }
+    .module-card-icon-wrap.purple { background: #F5F3FF; }
+
+    .module-card-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .module-card-title span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .module-list {
+      list-style: none;
+    }
+
+    .module-list li {
+      font-size: 12.5px;
+      color: #4B5563;
+      padding: 3.5px 0 3.5px 18px;
+      position: relative;
+      line-height: 1.45;
+    }
+
+    .module-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #16A34A;
+      font-size: 11px;
+      font-weight: 700;
+      top: 4px;
+    }
+
+    /* ─── TWO-COL CHECKLIST ────────────────────────────────────── */
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 28px;
+    }
+
+    .checklist-item {
+      font-size: 13px;
+      color: #374151;
+      padding: 5px 0 5px 22px;
+      position: relative;
+      line-height: 1.5;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .checklist-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: #DCFCE7;
+      border: 1.5px solid #BBF7D0;
+    }
+
+    .checklist-item::after {
+      content: '✓';
+      position: absolute;
+      left: 2px; top: 8px;
+      font-size: 9px;
+      font-weight: 800;
+      color: #16A34A;
+      line-height: 14px;
+    }
+
+    /* ─── INFO BOX ─────────────────────────────────────────────── */
+    .info-box {
+      background: #EFF6FF;
+      border: 1.5px solid #93C5FD;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .info-box-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .info-box p {
+      font-size: 13px;
+      color: #1E40AF;
+      line-height: 1.65;
+    }
+
+    .info-box strong { color: #1E3A8A; }
+
+    /* ─── HIGHLIGHT BOX ────────────────────────────────────────── */
+    .highlight-section {
+      background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 10px 10px 0;
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+
+    .highlight-section h3 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .highlight-section p {
+      font-size: 13.5px;
+      color: #1E40AF;
+      line-height: 1.65;
+    }
+
+    /* ─── FORMULA BOX ──────────────────────────────────────────── */
+    .formula-box {
+      background: #EFF6FF;
+      border: 1.5px solid #93C5FD;
+      border-radius: 10px;
+      padding: 18px 24px;
+      font-family: 'Inter', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      text-align: center;
+      letter-spacing: 0.3px;
+      margin: 20px 0;
+    }
+
+    /* ─── TECH GRID ────────────────────────────────────────────── */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .tech-card {
+      border: 1.5px solid var(--borde);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .tech-card-header {
+      padding: 16px 20px 14px;
+    }
+
+    .tech-card-header.navy   { background: var(--navy); }
+    .tech-card-header.teal   { background: #005C60; }
+    .tech-card-header.orange { background: #6B2209; }
+
+    .tech-card-header h4 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      color: white;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+    }
+
+    .tech-card-header p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .tech-card-body {
+      padding: 16px 20px;
+      background: white;
+    }
+
+    .tech-list {
+      list-style: none;
+    }
+
+    .tech-list li {
+      font-size: 12px;
+      color: #4B5563;
+      padding: 4px 0 4px 14px;
+      position: relative;
+      line-height: 1.45;
+    }
+
+    .tech-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--turquesa);
+      font-size: 10px;
+      top: 5px;
+    }
+
+    .tech-repo {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--borde);
+      font-size: 11px;
+      color: var(--blue);
+      font-weight: 600;
+      font-family: 'Inter', monospace;
+    }
+
+    /* ─── PRICE BOX ────────────────────────────────────────────── */
+    .price-box {
+      background: linear-gradient(135deg, var(--navy) 0%, #004EA8 50%, var(--blue) 100%);
+      border-radius: 16px;
+      padding: 48px 60px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .price-box::before {
+      content: '';
+      position: absolute;
+      top: -70px; right: -70px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,196,205,0.2) 0%, transparent 70%);
+    }
+
+    .price-box::after {
+      content: '';
+      position: absolute;
+      bottom: -50px; left: -50px;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,166,35,0.15) 0%, transparent 70%);
+    }
+
+    .price-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .price-amount {
+      font-family: 'Nunito', sans-serif;
+      font-size: 80px;
+      font-weight: 900;
+      color: white;
+      line-height: 1;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .price-amount sup {
+      font-size: 34px;
+      vertical-align: super;
+      line-height: 0;
+      font-weight: 700;
+    }
+
+    .price-amount .currency {
+      font-size: 26px;
+      font-weight: 600;
+      opacity: 0.75;
+    }
+
+    .price-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      position: relative;
+      z-index: 2;
+      margin-top: 4px;
+    }
+
+    /* ─── INVEST TABLE ─────────────────────────────────────────── */
+    .sub-section-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--borde);
+    }
+
+    .invest-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .invest-table th {
+      background: var(--navy);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .invest-table th:last-child { text-align: center; }
+
+    .invest-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--borde);
+      color: #374151;
+      vertical-align: middle;
+    }
+
+    .invest-table td:last-child { text-align: center; }
+    .invest-table tr:nth-child(even) td { background: #F8FAFC; }
+    .invest-table tr:last-child td {
+      border-bottom: none;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 14px;
+      background: #EFF6FF;
+    }
+
+    .invest-table .total-row td {
+      background: linear-gradient(135deg, #EFF6FF, #DBEAFE) !important;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .badge-done {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #DCFCE7;
+      color: #15803D;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid #BBF7D0;
+      white-space: nowrap;
+    }
+
+    .badge-price {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--navy);
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .badge-price.orange {
+      background: var(--naranja);
+    }
+
+    .badge-price.total {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      font-size: 16px;
+      padding: 7px 18px;
+    }
+
+    /* ─── PAYMENT INFO ─────────────────────────────────────────── */
+    .payment-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .payment-card {
+      background: var(--gris-claro);
+      border: 1.5px solid var(--borde);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .payment-card-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .payment-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .payment-method-tag {
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #4B5563;
+    }
+
+    .payment-structure-list {
+      list-style: none;
+    }
+
+    .payment-structure-list li {
+      font-size: 13px;
+      color: #374151;
+      padding: 4px 0 4px 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .payment-structure-list li::before {
+      content: '·';
+      position: absolute;
+      left: 6px;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 16px;
+      top: 0px;
+    }
+
+    /* ─── DIVIDER ──────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--borde), transparent);
+      margin: 0 60px;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────────────── */
+    .doc-footer {
+      background: var(--navy);
+      padding: 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-meta {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+
+    .footer-contact {
+      text-align: right;
+    }
+
+    .footer-contact p {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 4px;
+    }
+
+    .footer-contact p strong {
+      color: white;
+      font-weight: 600;
+    }
+
+    .footer-date {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 8px;
+    }
+
+    /* ─── PRINT ─────────────────────────────────────────────────── */
+    @media print {
+      body { background: white; }
+      .document { box-shadow: none; max-width: 100%; }
+      .module-card { break-inside: avoid; }
+      .invest-table tr { break-inside: avoid; }
+      .section-header { page-break-before: always; }
+    }
+
+    @page { margin: 0; size: A4; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .modules-grid { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: 1fr 1fr; }
+      .payment-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      body { font-size: 13px; }
+
+      .cover { padding: 36px 24px 48px; min-height: auto; }
+      .cover-logo-wrap { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .cover-title { font-size: 28px; }
+      .cover-subtitle { font-size: 14px; }
+      .cover-progress-wrap { max-width: 100%; }
+      .cover-badges { gap: 8px; }
+      .cover-badge { font-size: 11px; padding: 4px 10px; }
+
+      .section-header {
+        padding: 28px 24px;
+        flex-direction: column;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .section-header h2 { font-size: 20px; }
+      .section-status-tag { align-self: flex-start; }
+
+      .content-section { padding: 28px 24px; }
+      .divider { margin: 0 24px; }
+
+      .stats-row { grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+      .stat-number { font-size: 26px; }
+      .stat-card.big .stat-number { font-size: 36px; }
+      .stat-label { font-size: 10px; }
+
+      .modules-grid { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: 1fr; }
+      .checklist-grid { grid-template-columns: 1fr; }
+      .payment-row { grid-template-columns: 1fr; }
+
+      .price-box { padding: 32px 24px; }
+      .price-amount { font-size: 58px; }
+
+      .invest-table { font-size: 12px; }
+      .invest-table td, .invest-table th { padding: 8px 10px; }
+      .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+      .doc-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px 24px;
+        gap: 20px;
+      }
+      .footer-contact { text-align: left; }
+
+      .url-card { flex-direction: column; align-items: flex-start; gap: 8px; padding: 14px 16px; }
+      .url-card-value { font-size: 12.5px; word-break: break-all; }
+    }
+
+    @media (max-width: 500px) {
+      .stats-row { grid-template-columns: 1fr; }
+      .cover-title { font-size: 24px; }
+      .section-header h2 { font-size: 18px; }
+      .price-amount { font-size: 48px; }
+    }
+  </style>
+</head>
+<body>
+<div class="document">
+
+  <!-- ══════════════════════════════════════════════════
+       PORTADA
+  ══════════════════════════════════════════════════ -->
+  <div class="cover">
+    <div class="cover-accent"></div>
+    <div class="cover-accent2"></div>
+    <div class="cover-accent3"></div>
+
+    <div class="cover-logo-wrap">
+      <!-- Logo SVG Viaja y Explora -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 68" width="200" height="52">
+        <defs>
+          <linearGradient id="cv-sun" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F5A623"/>
+            <stop offset="100%" stop-color="#E8673A"/>
+          </linearGradient>
+          <linearGradient id="cv-wave" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00C4CD"/>
+            <stop offset="100%" stop-color="#0066CC"/>
+          </linearGradient>
+        </defs>
+        <circle cx="34" cy="26" r="10" fill="url(#cv-sun)"/>
+        <line x1="34" y1="10" x2="34" y2="14" stroke="#F5A623" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="34" y1="38" x2="34" y2="42" stroke="#F5A623" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="18" y1="26" x2="22" y2="26" stroke="#F5A623" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="46" y1="26" x2="50" y2="26" stroke="#F5A623" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="22.9" y1="14.9" x2="25.8" y2="17.8" stroke="#F5A623" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="42.2" y1="34.2" x2="45.1" y2="37.1" stroke="#F5A623" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="45.1" y1="14.9" x2="42.2" y2="17.8" stroke="#F5A623" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="25.8" y1="34.2" x2="22.9" y2="37.1" stroke="#F5A623" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M12 50 Q20 44 28 50 Q36 56 44 50 Q52 44 60 50" stroke="url(#cv-wave)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M12 57 Q20 51 28 57 Q36 63 44 57 Q52 51 60 57" stroke="url(#cv-wave)" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.55"/>
+        <text x="72" y="26" font-family="Nunito, Arial Rounded MT Bold, system-ui" font-size="10" font-weight="800" fill="white" letter-spacing="1.5">Viaja y</text>
+        <text x="70" y="46" font-family="Nunito, Arial Rounded MT Bold, system-ui" font-size="22" font-weight="900" fill="white" letter-spacing="0.5">explora</text>
+        <text x="72" y="61" font-family="Nunito, Arial Rounded MT Bold, system-ui" font-size="9" font-weight="700" fill="#00C4CD" letter-spacing="2.5">MARGARITA</text>
+      </svg>
+      <div class="cover-agency-badge">Desarrollado por BlackTech Solutions</div>
+    </div>
+
+    <div class="cover-body">
+      <p class="cover-eyebrow">Documento de Entrega Oficial &nbsp;·&nbsp; Abril 2026</p>
+      <h1 class="cover-title">Propuesta de Entrega —<br>Viaja y Explora Margarita</h1>
+      <p class="cover-subtitle">Resumen completo de todos los proyectos desarrollados, funcionalidades entregadas e inversión total</p>
+
+      <div class="cover-badges">
+        <span class="cover-badge turquesa">ENTREGA TOTAL</span>
+        <span class="cover-badge">Abril 2026</span>
+        <span class="cover-badge orange">BlackTech Solutions</span>
+      </div>
+
+      <div class="cover-progress-wrap">
+        <div class="cover-progress-label">
+          <span>Progreso total del proyecto</span>
+          <span>100%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="cover-waves" viewBox="0 0 960 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 60 Q120 20 240 60 Q360 100 480 60 Q600 20 720 60 Q840 100 960 60 L960 120 L0 120 Z" fill="white"/>
+      <path d="M0 80 Q120 50 240 80 Q360 110 480 80 Q600 50 720 80 Q840 110 960 80 L960 120 L0 120 Z" fill="white" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 1 — RESUMEN DE INVERSIÓN
+  ══════════════════════════════════════════════════ -->
+  <div class="section-header">
+    <div class="section-header-left">
+      <div class="section-version-badge">Resumen</div>
+      <h2>Resumen de la Inversión Total</h2>
+      <p>Tres sistemas integrados entregados completamente: sitio web público, panel de administración y sistema de gestión interna.</p>
+    </div>
+    <div class="section-status-tag">✅ Completado</div>
+  </div>
+
+  <div class="content-section">
+    <div class="stats-row highlight-row">
+      <div class="stat-card big">
+        <div class="stat-number">$750</div>
+        <div class="stat-label">Sitio Web + Panel Admin</div>
+        <div class="stat-sublabel">Incluye ambos proyectos</div>
+      </div>
+      <div class="stat-card turquesa big">
+        <div class="stat-number">$350</div>
+        <div class="stat-label">Sistema Backoffice Interno</div>
+        <div class="stat-sublabel">Gestión operativa de la agencia</div>
+      </div>
+      <div class="stat-card naranja big" style="box-shadow: 0 8px 32px rgba(232,103,58,0.35);">
+        <div class="stat-number" style="font-size:52px;">$1,100</div>
+        <div class="stat-label" style="font-size:13px; font-weight:700;">Inversión Total</div>
+        <div class="stat-sublabel" style="font-size:11px;">Todos los proyectos</div>
+      </div>
+    </div>
+
+    <p class="section-desc">
+      Este documento resume la totalidad del trabajo desarrollado para Viaja y Explora Margarita. Se entregaron tres sistemas integrados: el sitio web público de la agencia, el panel de administración para gestionar el contenido web, y el sistema de gestión interna (backoffice) para las operaciones diarias de la agencia.
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 2 — PROYECTO 1: SITIO WEB PÚBLICO
+  ══════════════════════════════════════════════════ -->
+  <div class="section-header">
+    <div class="section-header-left">
+      <div class="section-version-badge">Proyecto 1</div>
+      <h2>Sitio Web Público — Viaja y Explora</h2>
+      <p>Sitio web de la agencia disponible en internet con identidad visual completa de Viaja y Explora Margarita. 14 páginas, responsive completo, SEO optimizado.</p>
+    </div>
+    <div class="section-status-tag">✅ En Producción</div>
+  </div>
+
+  <div class="content-section">
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-number">14</div>
+        <div class="stat-label">Páginas Implementadas</div>
+      </div>
+      <div class="stat-card turquesa">
+        <div class="stat-number">Responsive</div>
+        <div class="stat-label">iPhone SE → Desktop</div>
+      </div>
+      <div class="stat-card naranja">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Errores TypeScript en Build</div>
+      </div>
+    </div>
+
+    <div class="url-card">
+      <div class="url-card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" stroke="#1E40AF" stroke-width="1.8"/>
+          <path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M3 12h18" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="url-card-label">URL en Producción</div>
+        <div class="url-card-value">https://anaviajes-web.vercel.app</div>
+      </div>
+    </div>
+
+    <div class="modules-grid">
+
+      <!-- Card 1 — Páginas y rutas -->
+      <div class="module-card">
+        <div class="module-card-header">
+          <div class="module-card-icon-wrap blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="#0066CC" stroke-width="1.8"/>
+              <path d="M3 9h18" stroke="#0066CC" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M9 21V9" stroke="#0066CC" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="module-card-title">
+            <span>14 páginas</span>
+            Rutas y Secciones
+          </div>
+        </div>
+        <ul class="module-list">
+          <li>/ Homepage con 8 secciones (hero slideshow, paquetes, ofertas, eventos, excursiones, testimoniales)</li>
+          <li>/paquetes — Catálogo con filtros en tiempo real</li>
+          <li>/paquetes/[slug] — Detalle con sticky booking bar</li>
+          <li>/cotizar — Formulario multi-step 4 pasos con validación</li>
+          <li>/excursiones, /ofertas, /nosotros, /contacto</li>
+          <li>/bodas, /luna-de-miel, /cumpleanos, /corporativo</li>
+          <li>/terminos y /privacidad</li>
+        </ul>
+      </div>
+
+      <!-- Card 2 — Funcionalidades -->
+      <div class="module-card">
+        <div class="module-card-header">
+          <div class="module-card-icon-wrap teal">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#009CA0" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="module-card-title">
+            <span>Interactividad</span>
+            Funcionalidades
+          </div>
+        </div>
+        <ul class="module-list">
+          <li>Hero slideshow 4 destinos con transiciones CSS (sin Framer Motion)</li>
+          <li>Cotizador rápido glassmorphism en hero</li>
+          <li>Countdown timers reales en sección de ofertas</li>
+          <li>WhatsApp float con tooltip animado en todas las páginas</li>
+          <li>Formulario cotización con envío a WhatsApp pre-formateado</li>
+          <li>Newsletter con persistencia en base de datos</li>
+          <li>SEO con ISR 60s en páginas de paquetes</li>
+        </ul>
+      </div>
+
+      <!-- Card 3 — Identidad visual -->
+      <div class="module-card">
+        <div class="module-card-header">
+          <div class="module-card-icon-wrap orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="4" stroke="#C0550A" stroke-width="1.8"/>
+              <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#C0550A" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="module-card-title">
+            <span>Marca propia</span>
+            Identidad Visual
+          </div>
+        </div>
+        <ul class="module-list">
+          <li>Paleta True Blue #0066CC + turquesa #00C4CD + naranja #E8673A + navy #003580</li>
+          <li>Logo SVG sol+olas personalizado para la agencia</li>
+          <li>Tipografía Nunito weight 900 en todos los títulos</li>
+          <li>Responsive completo iPhone SE → Pro Max → Desktop</li>
+          <li>Scrollbar naranja personalizada en toda la web</li>
+        </ul>
+      </div>
+
+      <!-- Card 4 — Tecnología -->
+      <div class="module-card">
+        <div class="module-card-header">
+          <div class="module-card-icon-wrap purple">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <polyline points="16 18 22 12 16 6" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="8 6 2 12 8 18" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="module-card-title">
+            <span>Stack moderno</span>
+            Tecnología
+          </div>
+        </div>
+        <ul class="module-list">
+          <li>Next.js 14 + TypeScript (build 0 errores)</li>
+          <li>Tailwind CSS — sin CSS adicional</li>
+          <li>Deploy en Vercel con CDN global</li>
+          <li>Imágenes optimizadas con next/image</li>
+          <li>Páginas estáticas + ISR para SEO óptimo</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 3 — PROYECTO 2: PANEL ADMIN WEB
+  ══════════════════════════════════════════════════ -->
+  <div class="section-header">
+    <div class="section-header-left">
+      <div class="section-version-badge">Proyecto 2</div>
+      <h2>Panel Admin Web — Incluido en $750</h2>
+      <p>Sistema de administración completo para gestionar todo el contenido del sitio web sin tocar código. Dark mode nativo, push notifications y 10 módulos de gestión.</p>
+    </div>
+    <div class="section-status-tag">✅ En Producción</div>
+  </div>
+
+  <div class="content-section">
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-number">10</div>
+        <div class="stat-label">Módulos de Gestión</div>
+      </div>
+      <div class="stat-card turquesa">
+        <div class="stat-number">Dark</div>
+        <div class="stat-label">Modo Claro / Oscuro Nativo</div>
+      </div>
+      <div class="stat-card naranja">
+        <div class="stat-number">Push</div>
+        <div class="stat-label">Notificaciones en Tiempo Real</div>
+      </div>
+    </div>
+
+    <div class="url-card">
+      <div class="url-card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="#1E40AF" stroke-width="1.8"/>
+          <path d="M3 9h18" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M9 21V9" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="url-card-label">URL del Panel Admin</div>
+        <div class="url-card-value">https://anaviajes-admin.vercel.app</div>
+      </div>
+    </div>
+
+    <div class="checklist-grid">
+      <div class="checklist-item">Dashboard con KPIs, gráficos recharts (cotizaciones 7 días, pie chart por estado, top destinos)</div>
+      <div class="checklist-item">Testimoniales — CRUD con reordenamiento por orden visual</div>
+      <div class="checklist-item">Paquetes — CRUD completo: imagen, precio, oferta flag, descripción</div>
+      <div class="checklist-item">FAQs — CRUD con categorías personalizables</div>
+      <div class="checklist-item">Excursiones — CRUD con duración, capacidad y etiquetas</div>
+      <div class="checklist-item">Newsletter — Lista de suscriptores + export CSV</div>
+      <div class="checklist-item">Eventos — CRUD con tabs (Bodas / Luna / Cumpleaños / Corporativo) + editor de planes</div>
+      <div class="checklist-item">Configuración del sitio — key-value editables (teléfonos, horarios, textos)</div>
+      <div class="checklist-item">Cotizaciones web — Inbox con filtros, cambio de estado, botón WhatsApp directo, export CSV</div>
+      <div class="checklist-item">Push notifications — Alertas en tiempo real al recibir una cotización nueva</div>
+      <div class="checklist-item">Mensajes de contacto — Inbox con estados leído/no leído</div>
+      <div class="checklist-item">Cambio de contraseña + foto de perfil del administrador</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 4 — PROYECTO 3: BACKOFFICE INTERNO
+  ══════════════════════════════════════════════════ -->
+  <div class="section-header orange">
+    <div class="section-header-left">
+      <div class="section-version-badge">Proyecto 3</div>
+      <h2>Sistema Backoffice Interno — $350</h2>
+      <p>Sistema de gestión interna para la operación diaria de la agencia: proveedores, tarifas por temporada, cotizaciones formales con PDF y envío automático por email.</p>
+    </div>
+    <div class="section-status-tag">✅ Completado</div>
+  </div>
+
+  <div class="content-section">
+
+    <div class="info-box">
+      <div class="info-box-icon">💡</div>
+      <p>
+        <strong>Integración inteligente:</strong> Este módulo fue integrado directamente en el panel admin existente para reducir costos de infraestructura y mantenimiento. No requiere un sistema separado — se accede desde la misma URL del panel administrativo.
+      </p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Módulos del Backoffice</div>
+      </div>
+      <div class="stat-card turquesa">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Nuevas Tablas en BD</div>
+      </div>
+      <div class="stat-card naranja">
+        <div class="stat-number">PDF</div>
+        <div class="stat-label">Cotizaciones Formales + Email</div>
+      </div>
+    </div>
+
+    <div class="modules-grid">
+
+      <!-- Módulo 1: Proveedores -->
+      <div class="module-card">
+        <div class="module-card-header">
+          <div class="module-card-icon-wrap blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="#0066CC" stroke-width="1.8"/>
+              <path d="M3 9h18" stroke="#0066CC" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M9 21V9" stroke="#0066CC" stroke-width="1.6" stroke-linecap="round"/>
+              <rect x="5" y="5" width="2.5" height="2.5" rx="0.5" fill="#0066CC" opacity="0.5"/>
+              <rect x="10" y="5" width="2.5" height="2.5" rx="0.5" fill="#0066CC" opacity="0.5"/>
+              <rect x="16" y="5" width="2.5" height="2.5" rx="0.5" fill="#0066CC" opacity="0.5"/>
+              <rect x="11" y="14" width="3" height="7" rx="0.5" fill="#0066CC" opacity="0.35"/>
+            </svg>
+          </div>
+          <div class="module-card-title">
+            <span>Módulo 1</span>
+            Proveedores
+          </div>
+        </div>
+        <ul class="module-list">
+          <li>Registro de hoteles y proveedores con contacto completo</li>
+          <li>Porcentaje de ganancia por defecto configurable por proveedor</li>
+          <li>Servicios anidados por cada proveedor</li>
+          <li>Tipos de servicio personalizables sin tocar código</li>
+          <li>Notas internas privadas por proveedor</li>
+        </ul>
+      </div>
+
+      <!-- Módulo 2: Catálogos -->
+      <div class="module-card">
+        <div class="module-card-header">
+          <div class="module-card-icon-wrap teal">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#009CA0" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M2 12l10 5 10-5" stroke="#009CA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 17l10 5 10-5" stroke="#009CA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+            </svg>
+          </div>
+          <div class="module-card-title">
+            <span>Módulo 2</span>
+            Catálogos
+          </div>
+        </div>
+        <ul class="module-list">
+          <li>Tipos de habitación con capacidad de plazas (Sencilla/Doble/Triple/+)</li>
+          <li>Planes de alojamiento (Todo Incluido, Desayuno, Pensión Completa, +)</li>
+          <li>Tipos de servicio (Alojamiento, Excursión, Traslado, +)</li>
+          <li>Todos completamente editables desde el panel sin código</li>
+          <li>Sin límite de categorías — el cliente los gestiona</li>
+        </ul>
+      </div>
+
+      <!-- Módulo 3: Tarifas -->
+      <div class="module-card">
+        <div class="module-card-header">
+          <div class="module-card-icon-wrap orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="#C0550A" stroke-width="1.8"/>
+              <path d="M12 7v1.5m0 7V17m0-1.5c-1.5 0-2.5-.67-2.5-1.5S10.5 12.5 12 12.5s2.5-.67 2.5-1.5S13.5 9.5 12 9.5s-2.5-.67-2.5-1.5" stroke="#C0550A" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="module-card-title">
+            <span>Módulo 3</span>
+            Tarifas
+          </div>
+        </div>
+        <ul class="module-list">
+          <li>Precios por temporada con rango de fechas exacto</li>
+          <li>Tarifa diferenciada: Adulto (11+) / Niño (4–10) / Infante (0–3)</li>
+          <li>Porcentaje de ganancia configurable por tarifa</li>
+          <li>Preview automático del precio al completar el formulario</li>
+          <li>Lógica de plazas cama aplicada automáticamente</li>
+        </ul>
+      </div>
+
+      <!-- Módulo 4: Cotizaciones Internas -->
+      <div class="module-card" style="border-color:#BFDBFE; background:#EFF6FF;">
+        <div class="module-card-header">
+          <div class="module-card-icon-wrap" style="background:#DBEAFE;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
+              <polyline points="14 2 14 8 20 8" stroke="#1E40AF" stroke-width="1.8" stroke-linejoin="round"/>
+              <line x1="8" y1="13" x2="16" y2="13" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="8" y1="17" x2="13" y2="17" stroke="#1E40AF" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="module-card-title" style="color:#1E40AF;">
+            <span style="color:var(--blue);">Módulo 4</span>
+            Cotizaciones Internas
+          </div>
+        </div>
+        <ul class="module-list">
+          <li>Formulario con calculadora automática de precio en tiempo real</li>
+          <li>Numeración correlativa: VE-2026-001, VE-2026-002…</li>
+          <li>PDF con identidad visual completa de V&amp;E (logo, colores, desglose)</li>
+          <li>Descarga directa del PDF desde el panel</li>
+          <li>Envío automático por email con PDF adjunto vía Resend</li>
+          <li>Estados: Borrador → Enviada → Aceptada → Rechazada</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Lógica de plazas cama -->
+  <div class="content-section" style="background:#FAFBFC;">
+    <div class="highlight-section">
+      <h3>Lógica de Plazas Cama — Estándar Hotelero</h3>
+      <p>
+        El sistema aplica automáticamente la regla de plazas cama de la industria hotelera: si una habitación doble está ocupada por 1 persona, se cobran las 2 plazas para compensar la cama sin uso. Esta lógica está implementada en la calculadora de cotizaciones y se refleja en el PDF generado.
+      </p>
+    </div>
+    <div class="formula-box">
+      Precio Total = PVP &times; (1 + % Ganancia) &times; Plazas de la Habitación
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 5 — INFRAESTRUCTURA TÉCNICA
+  ══════════════════════════════════════════════════ -->
+  <div class="section-header">
+    <div class="section-header-left">
+      <div class="section-version-badge">Técnico</div>
+      <h2>Infraestructura Técnica</h2>
+      <p>Los tres sistemas comparten la misma infraestructura de producción, minimizando costos de hosting y mantenimiento.</p>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="tech-grid">
+
+      <div class="tech-card">
+        <div class="tech-card-header navy">
+          <h4>Backend API</h4>
+          <p>Express.js + TypeScript + PostgreSQL</p>
+        </div>
+        <div class="tech-card-body">
+          <ul class="tech-list">
+            <li>Express.js + TypeScript estricto</li>
+            <li>PostgreSQL en Neon (cloud)</li>
+            <li>Deploy en Render</li>
+            <li>Auth JWT + rate limiting en endpoints públicos</li>
+            <li>Cloudinary para imágenes</li>
+            <li>Resend para emails transaccionales</li>
+            <li>Web Push (notificaciones push)</li>
+          </ul>
+          <div class="tech-repo">MgtaDev/anaviajes-api</div>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header teal">
+          <h4>Panel Admin</h4>
+          <p>Next.js 14 + Tailwind + shadcn/ui</p>
+        </div>
+        <div class="tech-card-body">
+          <ul class="tech-list">
+            <li>Next.js 14 + TypeScript</li>
+            <li>Tailwind CSS + shadcn/ui</li>
+            <li>Dark mode nativo con ThemeProvider</li>
+            <li>@react-pdf/renderer para PDFs</li>
+            <li>Deploy en Vercel</li>
+            <li>Build TypeScript 0 errores</li>
+          </ul>
+          <div class="tech-repo">MgtaDev/anaviajes-admin</div>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-card-header orange">
+          <h4>Sitio Web</h4>
+          <p>Next.js 14 + ISR + CDN Global</p>
+        </div>
+        <div class="tech-card-body">
+          <ul class="tech-list">
+            <li>Next.js 14 + TypeScript</li>
+            <li>ISR para SEO (revalidate 60s)</li>
+            <li>Deploy en Vercel (CDN global)</li>
+            <li>Dominio configurable</li>
+            <li>next/image para optimización</li>
+            <li>Build TypeScript 0 errores</li>
+          </ul>
+          <div class="tech-repo">MgtaDev/anaviajes-web</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       SECCIÓN 6 — RESUMEN DE INVERSIÓN
+  ══════════════════════════════════════════════════ -->
+  <div class="section-header">
+    <div class="section-header-left">
+      <div class="section-version-badge">Inversión</div>
+      <h2>Resumen de Inversión</h2>
+      <p>Desglose final de todos los proyectos entregados y su inversión correspondiente.</p>
+    </div>
+  </div>
+
+  <div class="content-section">
+
+    <div class="table-wrap" style="margin-bottom: 32px;">
+      <table class="invest-table">
+        <thead>
+          <tr>
+            <th style="width: 200px;">Proyecto</th>
+            <th>Descripción</th>
+            <th style="width: 100px;">Estado</th>
+            <th style="width: 110px; text-align:center;">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sitio Web Público</strong></td>
+            <td>14 páginas, responsive completo, SEO con ISR, identidad visual V&amp;E</td>
+            <td><span class="badge-done">✅ Entregado</span></td>
+            <td style="text-align:center;">—</td>
+          </tr>
+          <tr>
+            <td><strong>Panel Admin Web</strong></td>
+            <td>10 módulos, dark mode, push notifications, export CSV, editor de planes</td>
+            <td><span class="badge-done">✅ Entregado</span></td>
+            <td style="text-align:center;"><span class="badge-price">$750 USD</span></td>
+          </tr>
+          <tr>
+            <td><strong>Sistema Backoffice</strong></td>
+            <td>Proveedores, catálogos, tarifas, cotizaciones PDF + envío por email</td>
+            <td><span class="badge-done">✅ Entregado</span></td>
+            <td style="text-align:center;"><span class="badge-price orange">$350 USD</span></td>
+          </tr>
+          <tr class="total-row">
+            <td><strong>TOTAL</strong></td>
+            <td><strong>Inversión completa en tecnología — Todos los proyectos</strong></td>
+            <td><span class="badge-done">✅ Completo</span></td>
+            <td style="text-align:center;"><span class="badge-price total">$1,100 USD</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Caja del total -->
+    <div class="price-box">
+      <p class="price-eyebrow">Inversión Total — Todos los Proyectos</p>
+      <div class="price-amount"><sup>$</sup>1,100 <span class="currency">USD</span></div>
+      <p class="price-desc">Sitio Web + Panel Admin ($750) · Sistema Backoffice Interno ($350)</p>
+    </div>
+
+    <!-- Nota de pago -->
+    <p class="sub-section-title">Condiciones de Pago</p>
+    <div class="payment-row">
+      <div class="payment-card">
+        <div class="payment-card-title">Estructura de Pago</div>
+        <ul class="payment-structure-list">
+          <li>50% anticipo al inicio del proyecto</li>
+          <li>50% en entrega final del sistema</li>
+          <li>Pago único — sin mensualidades adicionales</li>
+          <li>3 revisiones incluidas en el precio</li>
+        </ul>
+      </div>
+      <div class="payment-card">
+        <div class="payment-card-title">Métodos de Pago Aceptados</div>
+        <div class="payment-methods">
+          <span class="payment-method-tag">Zelle</span>
+          <span class="payment-method-tag">PayPal</span>
+          <span class="payment-method-tag">Wise</span>
+          <span class="payment-method-tag">USDT</span>
+          <span class="payment-method-tag">Zinli</span>
+          <span class="payment-method-tag">Pago Móvil</span>
+          <span class="payment-method-tag">Stripe</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════ -->
+  <div class="doc-footer">
+    <div class="footer-left">
+      <!-- Logo V&E en footer -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="150" height="38">
+        <defs>
+          <linearGradient id="ft-sun" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F5A623"/>
+            <stop offset="100%" stop-color="#E8673A"/>
+          </linearGradient>
+          <linearGradient id="ft-wave" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00C4CD"/>
+            <stop offset="100%" stop-color="#5B9FE0"/>
+          </linearGradient>
+        </defs>
+        <circle cx="24" cy="18" r="7" fill="url(#ft-sun)"/>
+        <line x1="24" y1="7" x2="24" y2="10" stroke="#F5A623" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="24" y1="26" x2="24" y2="29" stroke="#F5A623" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="13" y1="18" x2="16" y2="18" stroke="#F5A623" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="32" y1="18" x2="35" y2="18" stroke="#F5A623" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="15.8" y1="10.8" x2="17.9" y2="12.9" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round"/>
+        <line x1="30.1" y1="23.1" x2="32.2" y2="25.2" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round"/>
+        <line x1="32.2" y1="10.8" x2="30.1" y2="12.9" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round"/>
+        <line x1="17.9" y1="23.1" x2="15.8" y2="25.2" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M8 37 Q14 33 20 37 Q26 41 32 37 Q38 33 44 37" stroke="url(#ft-wave)" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+        <path d="M8 42 Q14 38 20 42 Q26 46 32 42 Q38 38 44 42" stroke="url(#ft-wave)" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <text x="52" y="20" font-family="Nunito, system-ui" font-size="8" font-weight="800" fill="rgba(255,255,255,0.7)" letter-spacing="1">Viaja y</text>
+        <text x="50" y="34" font-family="Nunito, system-ui" font-size="16" font-weight="900" fill="white" letter-spacing="0.3">explora</text>
+        <text x="52" y="44" font-family="Nunito, system-ui" font-size="7" font-weight="700" fill="#00C4CD" letter-spacing="2">MARGARITA</text>
+      </svg>
+      <div style="font-size:13px;font-family:'Nunito',sans-serif;font-weight:800;color:white;letter-spacing:0.3px;">BLACK<span style="color:#9B30FF;">TECH</span> Solutions</div>
+      <div class="footer-meta">Desarrollado por BlackTech Solutions &nbsp;·&nbsp; 2026</div>
+      <div class="footer-meta" style="margin-top:2px;">© 2026 BlackTech Solutions · Todos los derechos reservados</div>
+    </div>
+    <div class="footer-contact">
+      <p><strong>Email:</strong> blacktechsupport@gmail.com</p>
+      <p><strong>WhatsApp:</strong> wa.me/584121968978</p>
+      <p class="footer-date">Documento de entrega oficial — Abril 2026</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
